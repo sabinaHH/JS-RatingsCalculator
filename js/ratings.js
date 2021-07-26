@@ -1,17 +1,17 @@
 function collect_ratings() {
-  var ratings = {
+  const ratings = {
     count: 0,
     sum: 0,
     average: 0,
   };
 
   let rating = 0;
-  var elements = document.querySelectorAll(".rating");
+  const elements = document.querySelectorAll(".rating");
   elements.forEach((element) => {
     var elementValue = parseInt(element.value);
     rating = parseInt(element.id.replace("star", ""));
     ratings.count += elementValue;
-    ratings.sum = elementValue + rating;
+    ratings.sum += elementValue * rating;
   });
 
   if (ratings.count !== 0) {
